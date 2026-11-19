@@ -2,7 +2,7 @@
 <html lang="de">
 <head>
   <meta charset="UTF-8">
-  <meta name="sabbel-version" content="S234">
+  <meta name="sabbel-version" content="S235">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>SABBEL</title>
   <link rel="manifest" href="manifest.webmanifest">
@@ -4125,7 +4125,7 @@ function sabbelOfflineDuration(lastVisible,now=Date.now()){
 function formatSabbelOfflineSince(lastVisible,now=Date.now()){
  const d=new Date(lastVisible);if(!Number.isFinite(d.getTime()))return null;
  const days=sabbelOfflineCalendarDays(lastVisible);
- if(days>=31)return {prefix:"ist offline seit:",value:"30+ Tage"};
+ if(days>=31)return {prefix:"ist offline seit:",value:"Mehr als 30 Tagen"};
  const duration=sabbelOfflineDuration(lastVisible,now);
  const suffix=duration?" ("+duration+")":"";
  const time=d.toLocaleTimeString("de-DE",{hour:"numeric",minute:"2-digit"}).replace(/^0(?=\d:)/,"")+" Uhr"+suffix;
